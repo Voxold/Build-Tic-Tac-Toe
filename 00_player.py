@@ -17,4 +17,3 @@ class Player():
                 self.symbol = symbol.upper()
                 break
             print('Invalide, please use one letters only!')
-
