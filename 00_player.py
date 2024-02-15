@@ -18,6 +18,3 @@ class Player():
                 break
             print('Invalide, please use one letters only!')
 
-
-
-
