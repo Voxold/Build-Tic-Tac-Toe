@@ -1,6 +1,6 @@
 # Import player class
-from player_01 import Player
-from menu_02 import Menu
+from player import Player
+from menu import Menu
 
 
 class Board:
@@ -27,3 +27,8 @@ class Board:
 
     def reset_board(self):
         self.board = [str(i) for i in range (1,10)]
+
+
+
+
+        
