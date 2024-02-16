@@ -1,7 +1,7 @@
 # Import player class
-from player_01 import Player
-from menu_02 import Menu
-from board_03 import Board
+from player import Player
+from menu import Menu
+from board import Board
 import os
 
 
@@ -26,7 +26,7 @@ class Game:
             self.play_game()
         else:
             # quit game mathod
-            slef.quit_game()
+            self.quit_game()
 
 
     def setup_players(self):
@@ -75,13 +75,28 @@ class Game:
     
     def check_win(self):
         """ 3 """
-        pass
+        check_lists =[[0,1,2],[3,4,5],[6,7,8],  # rows
+                     [0,3,6,],[1,4,7,],[2,5,8], # colums
+                     [0,4,8],[2,4,6]]           # diagonals
+        
+        for combo in check_lists: #[0,1,2]
+            if (self.board.board[combo[0]] == self.board.board[combo[1]]
+                == self.board.board[combo[2]]):
+                return True
+            else:
+                return False
+    
     def check_draw(self):
         """ 4 """
-        pass
+        # we use all() of iterable method to return true if all true
+        return all(not cell.isdigit() for cell in self.board.board)
+
     def restart_game(self):
         """ 5 """
-        pass
+        self.board.reset_board()
+        self.current_player_index = 0
+        self.play_game()
+
     def quit_game(self):
         """ 6 """
         print('Thank you for playing!')
