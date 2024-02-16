@@ -1,4 +1,7 @@
-class Board():
+
+from 00_player import Player
+
+class Board:
     def __init__(self):
         self.board = [str(i) for i in range (1,10)]
 
@@ -10,7 +13,10 @@ class Board():
         
     
     def update_board(self):
-        pass
+        user = input('Put your symbol :')
+        if user == self.board:
+            display_board(self)
+            
 
     def reset_board(self):
         pass
