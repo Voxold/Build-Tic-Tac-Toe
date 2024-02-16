@@ -100,3 +100,5 @@ class Game:
     def quit_game(self):
         """ 6 """
         print('Thank you for playing!')
+
+game = Game()
