@@ -1,6 +1,5 @@
-# Import player class
+# Import files
 from player import Player
-from menu import Menu
 
 
 class Board:
@@ -20,15 +19,11 @@ class Board:
         return self.board[choice-1].isdigit()
 
     def update_board(self, choice, symbol):
-        if self.is_valide_move == choice:
+        symbol = Player.symbol
+        if self.is_valide_move == choice():
             self.board[choice-1] = symbol
             return True
         return False
 
     def reset_board(self):
         self.board = [str(i) for i in range (1,10)]
-
-
-
-
-        
